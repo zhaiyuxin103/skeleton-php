@@ -8,7 +8,10 @@
         "psr-4": {
             "Yuxin\\SkeletonPhp\\": "src/",
             "Tests\\": "tests/"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "authors": [
         {
