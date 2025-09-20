@@ -1,34 +1,68 @@
 {
-    "name": "zhaiyuxin/skeleton-php",
-    "description": "A skeleton repository for my packages",
-    "keywords": ["php", "skeleton", "package"],
-    "type": "project",
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Yuxin\\SkeletonPhp\\": "src/",
-            "Tests\\": "tests/"
-        },
-        "files": [
-            "src/helpers.php"
-        ]
+  "name": "zhaiyuxin/skeleton-php",
+  "description": "A skeleton repository for my packages",
+  "keywords": [
+    "php",
+    "skeleton",
+    "package"
+  ],
+  "type": "project",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Yuxin\\SkeletonPhp\\": "src/",
+      "Tests\\": "tests/"
     },
-    "authors": [
-        {
-            "name": "YuXin Zhai",
-            "email": "zhaiyuxin103@hotmail.com"
-        }
-    ],
-    "minimum-stability": "stable",
-    "config": {
-        "sort-packages": true,
-        "allow-plugins": {
-            "pestphp/pest-plugin": true
-        }
-    },
-    "require-dev": {
-        "laravel/pint": "^1.25",
-        "pestphp/pest": "^4.1",
-        "phpstan/phpstan": "^2.1"
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "YuXin Zhai",
+      "email": "zhaiyuxin103@hotmail.com"
     }
+  ],
+  "minimum-stability": "stable",
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "require-dev": {
+    "laravel/pint": "^1.25",
+    "orchestra/testbench": "^10.6",
+    "pestphp/pest": "^4.1",
+    "phpstan/phpstan": "^2.1"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Workbench\\App\\": "workbench/app/",
+      "Workbench\\Database\\Factories\\": "workbench/database/factories/",
+      "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "@clear",
+      "@prepare"
+    ],
+    "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+    "prepare": "@php vendor/bin/testbench package:discover --ansi",
+    "build": "@php vendor/bin/testbench workbench:build --ansi",
+    "serve": [
+      "Composer\\Config::disableProcessTimeout",
+      "@build",
+      "@php vendor/bin/testbench serve --ansi"
+    ],
+    "lint": [
+      "@php vendor/bin/pint --ansi",
+      "@php vendor/bin/phpstan analyse --verbose --ansi"
+    ],
+    "test": [
+      "@clear",
+      "@php vendor/bin/pest"
+    ]
+  }
 }
