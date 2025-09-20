@@ -6,7 +6,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Yuxin\\SkeletonPhp\\": "src/"
+            "Yuxin\\SkeletonPhp\\": "src/",
+            "Tests\\": "tests/"
         }
     },
     "authors": [
@@ -16,8 +17,13 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {},
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^4.1"
     }
 }
