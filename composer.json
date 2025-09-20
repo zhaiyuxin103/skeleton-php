@@ -1,0 +1,23 @@
+{
+    "name": "zhaiyuxin/skeleton-php",
+    "description": "A skeleton repository for my packages",
+    "keywords": ["php", "skeleton", "package"],
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Yuxin\\SkeletonPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "YuXin Zhai",
+            "email": "zhaiyuxin103@hotmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "config": {
+        "sort-packages": true
+    }
+}
