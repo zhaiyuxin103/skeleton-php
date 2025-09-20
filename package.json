@@ -1,0 +1,27 @@
+{
+  "name": "skeleton-php",
+  "version": "1.0.0",
+  "description": "A skeleton repository for my packages",
+  "keywords": [
+    "php",
+    "skeleton",
+    "package"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": [
+    {
+      "name": "YuXin Zhai",
+      "email": "zhaiyuxin103@hotmail.com"
+    }
+  ],
+  "license": "MIT",
+  "packageManager": "pnpm@10.16.0",
+  "devDependencies": {
+    "husky": "^9.1.7"
+  }
+}
